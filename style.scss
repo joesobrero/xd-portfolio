@@ -23,6 +23,7 @@ html, body {
   transform: translateY(-50%);
   width: 45px;
   height: 30px;
+  cursor: pointer;
   div {
     position: absolute;
     width: 100%;
@@ -30,7 +31,6 @@ html, body {
     background-color: $gray-2;
   }
 }
-
 div#menu-b-l0 {
   top: 0;
 }

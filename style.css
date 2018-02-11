@@ -10,7 +10,8 @@ html, body {
   top: 50%;
   transform: translateY(-50%);
   width: 45px;
-  height: 30px; }
+  height: 30px;
+  cursor: pointer; }
   #menu-b div {
     position: absolute;
     width: 100%;
