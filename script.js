@@ -16,6 +16,14 @@ $(document).ready(function() {
     var menuLine1 = $('#menu-b-l1');
     var menuLine2 = $('#menu-b-l2');
 
+    // intro
+    var intro = $('#intro');
+    var introArrow = $('#intro-arrow');
+    var introText = $('#intro-text');
+    var introH1 = $('#intro-h1');
+    var introH2 = $('#intro-h2');
+    var colors = ['#007EA7', '#69CA55', '#1D201F'];
+
 
     // FUNCTIONS
 
@@ -45,8 +53,31 @@ $(document).ready(function() {
         });
     }
 
+    // intro
+    function introColor() {
+        var i = 0;
+        setInterval(function() {
+            introH1.animate({
+                color: colors[i]
+            }, 5000);
+            i++;
+            if(i == colors.length) {
+                i = 0;
+            }
+        }, 5000)
+    }
+    function enterSite() {
+        introText.delay(1000).fadeIn(3000);
+        introArrow.delay(4000).fadeIn(3000);
+        menuButton.delay(4000).fadeIn(3000);
+    }
+
 
     // EVENTS
+
+    // enter site
+    introColor();
+    enterSite();
 
     // menu button
     menuButton.mouseenter(function() {
