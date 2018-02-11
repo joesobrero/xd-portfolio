@@ -67,9 +67,15 @@ $(document).ready(function() {
         }, 5000)
     }
     function enterSite() {
-        introText.delay(1000).fadeIn(3000);
-        introArrow.delay(4000).fadeIn(3000);
-        menuButton.delay(4000).fadeIn(3000);
+        introText.delay(1000).fadeIn(1200);
+        introArrow.delay(2000).fadeIn(600);
+        menuButton.delay(2000).fadeIn(600);
+    }
+    function leaveIntro() {
+        introText.animate({
+            top: '-=100%'
+        }, 1000).fadeOut();
+        introArrow.hide();
     }
 
 
@@ -81,10 +87,14 @@ $(document).ready(function() {
 
     // menu button
     menuButton.mouseenter(function() {
-        menuActive()
+        menuActive();
     });
     menuButton.mouseleave(function() {
-        menuUnActive()
+        menuUnActive();
     });
 
+    // leave intro
+    intro.scroll(function() {
+        leaveIntro();
+    });
 });
