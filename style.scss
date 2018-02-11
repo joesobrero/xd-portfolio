@@ -1,0 +1,43 @@
+// COLORS
+$white: #FCFCFC;
+$gray-0: #EEE;
+$gray-1: #CCC;
+$gray-2: #999;
+$black: #0F0F0F;
+
+// RESET DEFAULTS
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// MENU BUTTON
+
+#menu-b {
+  position: fixed;
+  z-index: 1;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 30px;
+  div {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: $gray-2;
+  }
+}
+
+div#menu-b-l0 {
+  top: 0;
+}
+div#menu-b-l1 {
+  top: 12px;
+}
+div#menu-b-l2 {
+  bottom: 0;
+  width: 66%;
+}
