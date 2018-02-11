@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // VARIABLES
 
     // colors
@@ -14,6 +15,7 @@ $(document).ready(function() {
     var menuLine0 = $('#menu-b-l0');
     var menuLine1 = $('#menu-b-l1');
     var menuLine2 = $('#menu-b-l2');
+
 
     // FUNCTIONS
 
@@ -43,6 +45,7 @@ $(document).ready(function() {
         });
     }
 
+
     // EVENTS
 
     // menu button
@@ -52,4 +55,5 @@ $(document).ready(function() {
     menuButton.mouseleave(function() {
         menuUnActive()
     });
+
 });
