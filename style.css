@@ -4,6 +4,10 @@ html, body {
   padding: 0;
   overflow: hidden; }
 
+a {
+  text-decoration: none;
+  color: #0F0F0F; }
+
 h1 {
   font-weight: 400; }
 
@@ -93,7 +97,7 @@ div#menu-c-l1 {
   width: 100%;
   height: 100%;
   background-color: #FFF;
-  margin-bottom: 100px; }
+  margin-bottom: 1px; }
 
 #intro-text {
   display: none;
@@ -127,5 +131,75 @@ div#menu-c-l1 {
   height: 50px;
   width: 50px;
   opacity: 0.75; }
+
+#bract {
+  z-index: 0;
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 50vh;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: 14px;
+  padding-right: 28px; }
+
+#bract-prev {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 66%;
+  height: 66%;
+  font-family: "Source Sans Pro", "Roboto", sans-serif; }
+  #bract-prev p {
+    opacity: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+    bottom: 82px;
+    left: -195px;
+    width: 210px;
+    height: 10px; }
+  #bract-prev a {
+    opacity: 0;
+    position: absolute;
+    bottom: -85px;
+    right: 50px;
+    font-size: 1.5em;
+    letter-spacing: 8px; }
+    #bract-prev a img {
+      position: absolute;
+      right: -50px;
+      top: 2px;
+      width: 31px;
+      height: 31px; }
+
+#bract-prev-img-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  #bract-prev-img-box img {
+    display: none;
+    position: absolute;
+    max-width: 125%;
+    min-width: 100%;
+    max-height: 125%;
+    min-height: 100%;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
+#bract-scroll {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 1px; }
 
 /*# sourceMappingURL=style.css.map */

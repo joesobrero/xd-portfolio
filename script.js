@@ -11,7 +11,6 @@ $(document).ready(function() {
     var gray2 = "#999";
     var black = "#0F0F0F";
 
-
     // menu
     var menu = $('#menu');
     var menuUl = $('#menu-ul');
@@ -30,6 +29,13 @@ $(document).ready(function() {
     var introH1 = $('#intro-h1');
     var introH2 = $('#intro-h2');
     var colors = ['#007EA7', '#69CA55', '#1D201F'];
+
+    // work
+    var bract = $('#bract');
+    var bractP = $('#bract-prev-p');
+    var bractA = $('#bract-prev-a');
+    var bractImg = $('#bract-prev-img');
+    var bractScroll = $('#bract-scroll');
 
 
     // FUNCTIONS
@@ -120,6 +126,38 @@ $(document).ready(function() {
         introArrow.hide();
     }
 
+    // work
+    function showBract() {
+        bract.delay(1000).fadeIn().animate({
+            top: '-=50vh'
+        }, 1000);
+        bractImg.delay(1500).fadeIn(1500);
+        bractP.delay(2000).animate({
+            left: '+=60px',
+            opacity: '+=100'
+        }, 1000);
+        bractA.delay(2000).animate({
+            bottom: '+=40px',
+            opacity: '+=100'
+        }, 1000);
+    }
+    function hidebract() {
+        bract.animate({
+            top: '-=50vh'
+        }, 1000).fadeOut();
+        bractImg.fadeOut(1000);
+        bractP.animate({
+            opacity: '-=100'
+        }, 1000).delay(1000).animate({
+            left: '-=60px'
+        });
+        bractA.animate({
+            opacity: '-=100'
+        }, 1000).delay(1000).animate({
+            bottom: '-=40px'
+        });
+    }
+
 
     // EVENTS
 
@@ -146,9 +184,16 @@ $(document).ready(function() {
     menuButtonC.mouseleave(function() {
         menuCUnActive();
     });
+    menu.click(function() {
+        menuClose();
+    });
 
     // leave intro
     intro.scroll(function() {
         leaveIntro();
+        showBract();
+    });
+    bract.scroll(function() {
+        hidebract();
     });
 });
