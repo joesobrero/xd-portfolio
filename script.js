@@ -2,6 +2,8 @@ $(document).ready(function() {
 
     // VARIABLES
 
+    var view = 0;
+
     // colors
     var white = "#FCFCFC";
     var gray0 = "#EEE";
@@ -10,11 +12,16 @@ $(document).ready(function() {
     var black = "#0F0F0F";
 
 
-    // menu button
+    // menu
+    var menu = $('#menu');
+    var menuUl = $('#menu-ul');
     var menuButton = $('#menu-b');
+    var menuButtonC = $('#menu-c');
     var menuLine0 = $('#menu-b-l0');
     var menuLine1 = $('#menu-b-l1');
     var menuLine2 = $('#menu-b-l2');
+    var menuCLine0 = $('#menu-c-l0');
+    var menuCLine1 = $('#menu-c-l1');
 
     // intro
     var intro = $('#intro');
@@ -52,6 +59,41 @@ $(document).ready(function() {
             width: '-=34%'
         });
     }
+    function menuCActive() {
+        menuCLine0.animate({
+            backgroundColor: white
+        });
+        menuCLine1.animate({
+            backgroundColor: white
+        });
+    }
+    function menuCUnActive() {
+        menuCLine0.animate({
+            backgroundColor: gray2
+        });
+        menuCLine1.animate({
+            backgroundColor: gray2
+        });
+    }
+
+    // menu
+    function menuOpen() {
+        menuButton.fadeOut();
+        menuButtonC.delay(200).fadeIn();
+        menu.fadeIn().animate({
+            width: '+=100%',
+            backgroundColor: black
+        }, 800);
+        menuUl.delay(400).fadeIn(600);
+    }
+    function menuClose() {
+        menuButton.delay(200).fadeIn();
+        menuButtonC.fadeOut();
+        menu.animate({
+            width: '-=100%'
+        }, 800).fadeOut();
+        menuUl.fadeOut(600);
+    }
 
     // intro
     function introColor() {
@@ -85,12 +127,24 @@ $(document).ready(function() {
     introColor();
     enterSite();
 
-    // menu button
+    // menu
     menuButton.mouseenter(function() {
         menuActive();
     });
     menuButton.mouseleave(function() {
         menuUnActive();
+    });
+    menuButton.click(function() {
+        menuOpen();
+    });
+    menuButtonC.click(function() {
+        menuClose();
+    });
+    menuButtonC.mouseenter(function() {
+        menuCActive();
+    });
+    menuButtonC.mouseleave(function() {
+        menuCUnActive();
     });
 
     // leave intro

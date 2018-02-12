@@ -1,10 +1,12 @@
-// FONTS
+// VARIABLES
+
+// fonts
 $font-stack-h: 'Source Sans Pro', 'Roboto', sans-serif;
 $lighter: 200;
 $light: 300;
 $reg: 400;
 
-// COLORS
+// colors
 $white: #FCFCFC;
 $gray-0: #EEE;
 $gray-1: #CCC;
@@ -26,9 +28,12 @@ h2 {
   font-weight: $lighter;
 }
 
-// MENU BUTTON
+// STYLES
 
-#menu-b {
+
+// menu button
+
+#menu-b, #menu-c {
   display: none;
   z-index: 2;
   position: fixed;
@@ -55,8 +60,55 @@ div#menu-b-l2 {
   bottom: 0;
   width: 66%;
 }
+// menu close button
+div#menu-c-l0 {
+  top: 10px;
+  transform: rotate(45deg);
+}
+div#menu-c-l1 {
+  top: 10px;
+  transform: rotate(-45deg);
+}
 
-// INTRO PAGE
+// menu
+
+#menu {
+  z-index: 1;
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100vh;
+  ul {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    width: 500px;
+    height: auto;
+  }
+  li {
+    margin: 25px 0;
+    text-align: center;
+  }
+  li a {
+    font-family: $font-stack-h;
+    font-size: 2.8em;
+    font-weight: $reg;
+    letter-spacing: 15px;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  }
+}
+
+// intro page
 
 #intro {
   z-index: 0;
@@ -108,7 +160,7 @@ div#menu-b-l2 {
   z-index: 1;
   position: absolute;
   left: 50%;
-  transform: tranlsateX(-50%);
+  transform: translateX(-50%);
   bottom: 25px;
   height: 50px;
   width: 50px;
