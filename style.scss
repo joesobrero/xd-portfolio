@@ -123,6 +123,7 @@ div#menu-c-l1 {
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   margin-right: 14px;
   padding-right: 28px;
 }
@@ -167,12 +168,12 @@ div#menu-c-l1 {
   bottom: 25px;
   height: 50px;
   width: 50px;
-  opacity: 0.75;
+  opacity: 0.25;
 }
 
 // work
 
-#bract {
+#bract, #grow, #poly {
   z-index: 0;
   position: absolute;
   display: none;
@@ -185,7 +186,7 @@ div#menu-c-l1 {
   margin-right: 14px;
   padding-right: 28px;
 }
-#bract-prev {
+#bract-prev, #grow-prev, #poly-prev {
   z-index: 2;
   position: absolute;
   left: 50%;
@@ -219,7 +220,10 @@ div#menu-c-l1 {
     }
   }
 }
-#bract-prev-img-box {
+#grow-prev #grow-prev-p {
+  bottom: 127px;
+}
+#bract-prev-img-box, #grow-prev-img-box, #poly-prev-img-box {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -237,7 +241,20 @@ div#menu-c-l1 {
     transform: translate(-50%, -50%);
   }
 }
-#bract-scroll {
+#grow-prev-img-box {
+  display: none;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid $gray-1;
+  #grow-prev-img {
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+  }
+}
+#bract-scroll, #grow-scroll, #poly-scroll {
   z-index: 1;
   position: absolute;
   top: 0;

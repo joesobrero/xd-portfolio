@@ -24,18 +24,27 @@ $(document).ready(function() {
 
     // intro
     var intro = $('#intro');
+    var introBg = $('#intro-bg');
     var introArrow = $('#intro-arrow');
     var introText = $('#intro-text');
     var introH1 = $('#intro-h1');
     var introH2 = $('#intro-h2');
     var colors = ['#007EA7', '#69CA55', '#1D201F'];
+    var colorInt;
 
     // work
     var bract = $('#bract');
     var bractP = $('#bract-prev-p');
     var bractA = $('#bract-prev-a');
     var bractImg = $('#bract-prev-img');
-    var bractScroll = $('#bract-scroll');
+    var grow = $('#grow');
+    var growP = $('#grow-prev-p');
+    var growA = $('#grow-prev-a');
+    var growImgBox = $('#grow-prev-img-box');
+    var poly = $('#poly');
+    var polyP = $('#poly-prev-p');
+    var polyA = $('#poly-prev-a');
+    var polyImg = $('#poly-prev-img');
 
 
     // FUNCTIONS
@@ -104,7 +113,7 @@ $(document).ready(function() {
     // intro
     function introColor() {
         var i = 0;
-        setInterval(function() {
+        colorInt = setInterval(function() {
             introH1.animate({
                 color: colors[i]
             }, 5000);
@@ -121,30 +130,32 @@ $(document).ready(function() {
     }
     function leaveIntro() {
         introText.animate({
-            top: '-=100%'
-        }, 1000).fadeOut();
+            top: '-=50%',
+            opacity: '-=1'
+        }, 800).fadeOut();
         introArrow.hide();
+        intro.delay(2000).fadeOut();
     }
 
     // work
     function showBract() {
-        bract.delay(1000).fadeIn().animate({
+        bract.delay(800).fadeIn().animate({
             top: '-=50vh'
         }, 1000);
-        bractImg.delay(1500).fadeIn(1500);
-        bractP.delay(2000).animate({
+        bractImg.delay(1300).fadeIn(1500);
+        bractP.delay(1800).animate({
             left: '+=60px',
             opacity: '+=100'
         }, 1000);
-        bractA.delay(2000).animate({
+        bractA.delay(1800).animate({
             bottom: '+=40px',
             opacity: '+=100'
         }, 1000);
     }
     function hidebract() {
         bract.animate({
-            top: '-=50vh'
-        }, 1000).fadeOut();
+            top: '-=100vh'
+        }, 2000).fadeOut();
         bractImg.fadeOut(1000);
         bractP.animate({
             opacity: '-=100'
@@ -157,7 +168,66 @@ $(document).ready(function() {
             bottom: '-=40px'
         });
     }
-
+    function showGrow() {
+        grow.delay(800).fadeIn().animate({
+            top: '-=50vh'
+        }, 1000);
+        growImgBox.delay(1300).fadeIn(1500);
+        growP.delay(1800).animate({
+            left: '+=60px',
+            opacity: '+=100'
+        }, 1000);
+        growA.delay(1800).animate({
+            bottom: '+=40px',
+            opacity: '+=100'
+        }, 1000);
+    }
+    function hideGrow() {
+        grow.animate({
+            top: '-=100vh'
+        }, 2000).fadeOut();
+        growImgBox.fadeOut(1000);
+        growP.animate({
+            opacity: '-=100'
+        }, 1000).delay(1000).animate({
+            left: '-=60px'
+        });
+        growA.animate({
+            opacity: '-=100'
+        }, 1000).delay(1000).animate({
+            bottom: '-=40px'
+        });
+    }
+    function showPoly() {
+        poly.delay(800).fadeIn().animate({
+            top: '-=50vh'
+        }, 1000);
+        polyImg.delay(1300).fadeIn(1500);
+        polyP.delay(1800).animate({
+            left: '+=60px',
+            opacity: '+=100'
+        }, 1000);
+        polyA.delay(1800).animate({
+            bottom: '+=40px',
+            opacity: '+=100'
+        }, 1000);
+    }
+    function hidePoly() {
+        poly.animate({
+            top: '-=100vh'
+        }, 2000).fadeOut();
+        polyImg.fadeOut(1000);
+        polyP.animate({
+            opacity: '-=100'
+        }, 1000).delay(1000).animate({
+            left: '-=60px'
+        });
+        polyA.animate({
+            opacity: '-=100'
+        }, 1000).delay(1000).animate({
+            bottom: '-=40px'
+        });
+    }
 
     // EVENTS
 
@@ -192,8 +262,17 @@ $(document).ready(function() {
     intro.scroll(function() {
         leaveIntro();
         showBract();
+        clearInterval(colorInt);
     });
     bract.scroll(function() {
         hidebract();
+        showGrow();
+    });
+    grow.scroll(function() {
+        hideGrow();
+        showPoly();
+    });
+    poly.scroll(function() {
+        hidePoly();
     });
 });
